@@ -18,12 +18,12 @@ class PaintTest extends Frame {
 
     public void paint(Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
-        BufferedImage bi = new BufferedImage(20, 20, BufferedImage.TYPE_USHORT_565_RGB);
+        BufferedImage bi = new BufferedImage(40, 40, BufferedImage.TYPE_USHORT_565_RGB);
         Graphics2D big = bi.createGraphics();
-        big.draw(new Line2D.Double(0.0, 0.0, 10.0, 10.0));
-        big.draw(new Line2D.Double(0.0, 10.0, 10.0, 0.0));
+        big.draw(new Line2D.Double(0.0, 0.0, 30.0, 10.0));
+        big.draw(new Line2D.Double(0.0, 30.0, 10.0, 0.0));
         TexturePaint tp = new TexturePaint(bi,
-                new Rectangle2D.Double(0.0, 0.0, 10.0, 10.0));
+                new Rectangle2D.Double(0.0, 0.0, 30.0, 10.0));
         g.setPaint(tp);
         g.fill(new Rectangle2D.Double(50, 50, 200, 200));
         GradientPaint gp = new GradientPaint(100, 100, Color.green,
